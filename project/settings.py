@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@yof6*l)$$j8)8-70m-lj6^4&g(z95680)53ff4+rg2+iy*6v9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://serves5.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,16 +125,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_URL = '/static/js/jquery/'
+STATIC_URL = '/static/js/'
 STATIC_URL = '/static/icon/'
 STATIC_URL = '/static/fonts/'
 STATIC_URL = '/static/css/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
 ]
-# Activate Django-Heroku.
-django_heroku.settings(locals())
